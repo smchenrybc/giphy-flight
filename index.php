@@ -10,7 +10,9 @@ require_once( __DIR__ . '/vendor/autoload.php' );
 
 // Flight stuff
 Flight::route('/', function(){
-  echo "Hello world!";
+  echo '<body style="background-color: #EEE; padding: 20px;"><div class="main" style="margin: 0 auto; max-width: 800px; text-align: center;">';
+  echo "Enter a string after the URL to search GIPHY. ⬆";
+  echo '</div></body>';
 });
 
 Flight::route('/@string', function($string){
@@ -31,7 +33,7 @@ Flight::route('/@string', function($string){
     // set URL
     $img_url = $result['data']['image_original_url'];
 
-    echo '<body style="background-color: #EEE; padding: 20px;"><div class="main" style="margin: 0 auto; max-width: 800px;">';
+    echo '<body style="background-color: #EEE; padding: 20px;"><div class="main" style="margin: 0 auto; max-width: 800px; text-align: center;">';
     echo '<img src="'. $img_url .'" alt="'. $search_tag .'" style="display: block; border-radius: 2px; width: 100%; height: auto;" />';
     echo '</div></body>';
   }
